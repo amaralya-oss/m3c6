@@ -5,24 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aroma & Grano | Café de Especialidad</title>
+
+    <!--Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap"
         rel="stylesheet">
+
+    <!--Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <!--CSS-->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Barra superior informativa (Topbar)-->
+    <div class="topbar">
+        <div class="l-container">
+            <p class="topbar__message">
+                📍 <strong>¡Reservas abiertas!</strong> Asegura tu cupo escribiendonos al formulario.
+            </p>
+        </div>
+    </div>
+    <!-- Barra de navegación (Navbar)-->
     <header class="l-header">
-        <div class="l-container l-flex-between">
-            <div class="brand">Aroma & Grano</div>
+        <div class="l-container header-top">
+            <!-- Toggle y Logo -->
+            <div class="header-brand-toggle">
+                <button class="nav-toggle">☰</button>
+                <div class="brand">Aroma & Grano</div>
+            </div>
 
+            <!-- Nav contenido -->
             <nav class="nav">
-                <ul>
+                <ul class="nav-list">
                     <li><a href="#" class="nav-link is-active">Inicio</a></li>
                     <li><a href="#" class="nav-link">Nuestra Carta</a></li>
                     <li><a href="#" class="nav-link">Reservas</a></li>
-                    <li><a href="#" class="nav-link">Descargar Carta</a></li>
+                    <li><a href="assets/PDFs/Carta-AromaGrano.pdf" class="nav-link" download>Descargar Carta</a></li>
+                    <li class="nav-link-action">
+                        <span class="material-symbols-outlined">
+                            shopping_cart
+                        </span>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -37,26 +63,30 @@
         </div>
     </section>
 
-
-    <section class="servicios l-section">
-        <!-- Incluir sección de servicios-->
-        <h2 class="servicio-title">Servicios</h2>
-        <div class="card">Atención en barra</div>
-        <div class="card">Delivery</div>
-        <div class="card">Eventos</div>
-
+    <!-- Sección de servicios-->
+    <section class="l-section servicios">
+        <div class="l-container">
+            <h2 class="section-title">Servicios</h2>
+            <div class="card">Atención en barra</div>
+            <div class="card">Delivery</div>
+            <div class="card">Eventos</div>
+        </div>
     </section>
 
-    <section class="productos l-section">
-        <h2 class="productos-title">Productos</h2>
-        <div class="card">Café de especialidad</div>
-        <div class="card">Bebidas frías</div>
-        <div class="card">Desayunos y Brunch</div>
-        <div class="card">Infusiones</div>
+    <!-- Sección de productos -->
+    <section class="l-section productos">
+        <div class="l-container">
+            <h2 class="section-title">Productos</h2>
+            <div class="card">Café de especialidad</div>
+            <div class="card">Bebidas frías</div>
+            <div class="card">Desayunos y Brunch</div>
+            <div class="card">Infusiones</div>
+        </div>
     </section>
 
 
-    <main class="favoritos l-section">
+    <!-- Sección de favoritos-->
+    <main class="l-section favoritos">
         <div class="l-container">
             <h2 class="section-title">Nuestros Favoritos</h2>
 
@@ -94,8 +124,8 @@
         </div>
     </main>
 
-    <!--Incluir comentarios/testimonios -->
-    <section class="testimonios l-section">
+    <!--Sección comentarios/testimonios -->
+    <section class="l-section testimonios">
         <div class="l-container">
             <h2 class="section-title">Opiniones de nuestros clientes</h2>
 

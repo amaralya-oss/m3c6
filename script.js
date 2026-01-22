@@ -4,7 +4,7 @@
    ========================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // ---------------------------------------------
     // 1. EFECTO SCROLL EN HEADER
     // Objetivo: Añadir sombra cuando el usuario baja
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. INTERACCIÓN BOTONES DE PEDIDO
     // Objetivo: Dar feedback visual al hacer clic
     // ---------------------------------------------
-    
+
     // Seleccionamos todos los botones pequeños de las cards
     const orderButtons = document.querySelectorAll('.card .btn-small');
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalText = currentBtn.innerText;
 
             // Evitamos que den clic muchas veces seguidas
-            if(currentBtn.classList.contains('is-added')) return;
+            if (currentBtn.classList.contains('is-added')) return;
 
             // Cambiamos el estado visual
             currentBtn.classList.add('is-added');
@@ -47,5 +47,35 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2000);
         });
     });
+    // ---------------------------------------------
+    // 3. MENSAJES ROTATIVOS EN TOPBAR
+    // ---------------------------------------------
 
+    const messages = [
+        "🚚 Despacho a domicilio",
+        "📍 Reservas disponibles",
+        "🎟️ Descuentos especiales esta semana"
+    ];
+
+    let currentMessage = 0;
+    const messageElement = document.getElementById("topbar-message");
+
+    setInterval(() => {
+        currentMessage = (currentMessage + 1) % messages.length;
+        messageElement.textContent = messages[currentMessage];
+    }, 3000); // cambia cada 3 segundos
+
+
+
+    // ---------------------------------------------
+    // 4. TOGGLE NAV MOBILE
+    // ---------------------------------------------
+
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('is-open');
+    });
 });
+

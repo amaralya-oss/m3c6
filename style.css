@@ -11,6 +11,8 @@
 body {
     font-family: 'Lato', sans-serif;
     /* Fuente cuerpo */
+    font-weight: 400;
+    /* Ligera */
     color: #3e2723;
     /* Café oscuro */
     line-height: 1.6;
@@ -23,6 +25,7 @@ h2,
 h3 {
     font-family: 'Playfair Display', serif;
     /* Fuente títulos Gourmet */
+    font-weight: 700;
     margin-bottom: 0.5em;
 }
 
@@ -49,6 +52,15 @@ img {
     margin: 0 auto;
     padding: 0 20px;
 }
+
+.l-topbar {
+    background-color: #3e2723;
+    color: #fff;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 6px 0;
+}
+
 
 .l-header {
     background-color: #fff;
@@ -90,24 +102,138 @@ img {
    Botones, Tarjetas, Navs, Heros.
    ========================================= */
 
+/*--- Módulo: Topbar --- */
+.topbar {
+    background-color: #3e2723;
+    /* café oscuro */
+    color: #f5f5f5;
+    font-size: 0.8rem;
+}
+
+.topbar__message {
+    text-align: center;
+    padding: 6px 0;
+    letter-spacing: 0.3px;
+}
+
 /* --- Módulo: Brand --- */
 .brand {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: bold;
     color: #3e2723;
+    width: max-content;
 }
 
 /* --- Módulo: Nav --- */
+.nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    /* desktop: links centrados */
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
 .nav-link {
-    margin-left: 20px;
-    font-weight: 700;
-    transition: color 0.3s;
+    text-decoration: none;
+    color: #3e2723;
+    font-weight: 400;
 }
 
 .nav-link:hover {
     color: #d32f2f;
-    /* Rojo suave */
+}
+
+.nav-toggle {
+    display: none;
+    /* se activa solo en mobile */
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Contenedor logo + toggle */
+.header-brand-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* logo centrado en desktop */
+    gap: 1rem;
+}
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    /* Toggle visible */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Logo + toggle a la izquierda */
+    .header-brand-toggle {
+        justify-content: flex-start;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    /* Nav oculto por defecto */
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 0.5rem;
+        gap: 1rem;
+    }
+
+    /* Nav visible cuando activo */
+    .nav.active {
+        display: flex;
+    }
+
+    /* Links apilados verticalmente */
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        /* alinea a la izquierda */
+        gap: 0.8rem;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    /* Ajuste de items de acción (botón y carrito) */
+    .nav-link-action,
+    .nav-list li .btn {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* --- Módulo: Nav Cart --- */
+.nav-link-action .material-symbols-outlined {
+    font-size: 1.3rem;
+    /* tamaño del icono */
+    color: #3e2723;
+    /* color del icono */
+    transition: color 0.3s ease;
+    align-content: center;
+}
+
+.nav-link-action .material-symbols-outlined:hover {
+    color: #d32f2f;
+    /* cambio de color al pasar el mouse */
+    cursor: pointer;
 }
 
 /* --- Módulo: Button --- */
@@ -227,7 +353,7 @@ img {
    ========================================= */
 
 /* Estado activo para link de navegación */
-.is-active {
+.nav-link.is-active {
     color: #d32f2f;
     border-bottom: 2px solid #d32f2f;
 }
@@ -236,6 +362,11 @@ img {
 .card.is-highlighted {
     border: 2px solid #3e2723;
     transform: scale(1.05);
+}
+
+/* Estado: Nav abierta en mobile */
+.nav.is-open {
+    display: flex;
 }
 
 /* =========================================
