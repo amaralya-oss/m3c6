@@ -146,6 +146,17 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoSlide();
 
 
+    // ---------------------------------------------
+    // 7. FOOTER
+    // ---------------------------------------------
+
+    const footerForm = document.querySelector('.footer-form');
+
+    footerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        footerForm.reset();
+        alert('Gracias por escribirnos ☕ Te responderemos pronto.');
+    });
 
 });
 
