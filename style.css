@@ -111,6 +111,69 @@ img {
    Botones, Tarjetas, Navs, Heros.
    ========================================= */
 
+/* --- Carrito de compras --- */
+.cart {
+    position: fixed;
+    top: 70px;
+    right: -350px;
+    width: 300px;
+    max-height: 80vh;
+    background-color: #fff;
+    box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    z-index: 200;
+    border-radius: 8px 0 0 8px;
+}
+
+.cart.open {
+    right: 0;
+}
+
+.cart h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.cart-items li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-items li button {
+    background: none;
+    border: none;
+    color: #b45427;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.cart-total {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* --- Contador carrito --- */
+.cart-count {
+    background-color: #b45427;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
+
+.nav-link-action {
+    position: relative;
+}
+
 /*--- Módulo: Topbar --- */
 .topbar {
     background-color: #66644b;
@@ -228,7 +291,9 @@ img {
     }
 }
 
-/* --- Módulo: Nav Cart --- */
+
+
+/* --- Módulo: Carrito de compras --- */
 .nav-link-action .material-symbols-outlined {
     font-size: 1.3rem;
     /* tamaño del icono */
@@ -242,6 +307,47 @@ img {
     color: #b45427;
     /* cambio de color al pasar el mouse */
     cursor: pointer;
+}
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    /* oculto por defecto */
+    width: 350px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    overflow-y: auto;
+    z-index: 200;
+    transition: right 0.3s ease;
+    border-left: 1px solid #ddd;
+}
+
+.cart.open {
+    right: 0;
+}
+
+.cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-items li span {
+    margin: 0 0.5rem;
+}
+
+.cart-items li button {
+    background: none;
+    border: none;
+    color: #b45427;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 
@@ -302,6 +408,27 @@ img {
     color: #fff;
 }
 
+/* Botón secundario para fondos claros */
+.btn-secondary-light {
+    border: 1px solid #3e2723;
+    /* borde café oscuro */
+    background-color: transparent;
+    /* fondo transparente */
+    color: #3e2723;
+    /* texto café oscuro */
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    /* transición suave */
+}
+
+.btn-secondary-light:hover {
+    background-color: #3e2723;
+    /* fondo café oscuro al pasar mouse */
+    color: #fff;
+    /* texto blanco sobre fondo oscuro */
+    border-color: #3e2723;
+    /* borde igual que fondo */
+}
 
 /* --- Módulo: Hero --- */
 .hero {

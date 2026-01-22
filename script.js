@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+
     // ---------------------------------------------
     // 1. EFECTO SCROLL EN HEADER
     // Objetivo: Añadir sombra cuando el usuario baja
@@ -21,32 +22,132 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---------------------------------------------
-    // 2. INTERACCIÓN BOTONES DE PEDIDO
-    // Objetivo: Dar feedback visual al hacer clic
+    // 2. INTERACCIÓN BOTONES DE PEDIDO + Carrito
+    // ---------------------------------------------
+    // ---------------------------------------------
+    // Carrito funcional completo
     // ---------------------------------------------
 
-    // Seleccionamos todos los botones pequeños de las cards
     const orderButtons = document.querySelectorAll('.card .btn-small');
+    const cart = document.getElementById('cart');
+    const cartCount = document.getElementById('cart-count');
+    const cartItemsContainer = document.getElementById('cart-items');
+    const btnBuy = document.getElementById('btn-buy');
+    const btnCloseCart = document.getElementById('btn-close-cart');
 
+    let cartItems = []; // arreglo de productos {title, quantity}
+    const navCart = document.getElementById('nav-cart');
+
+    // Abrir carrito al hacer clic en icono del nav
+    navCart.addEventListener('click', () => {
+        cart.classList.add('open');
+    });
+
+    // Función para cerrar carrito
+    function closeCart() {
+        cart.classList.remove('open');
+    }
+
+    // Función para actualizar carrito en pantalla
+    function updateCartUI() {
+        cartItemsContainer.innerHTML = '';
+        let totalItems = 0;
+
+        cartItems.forEach((item, index) => {
+            totalItems += item.quantity;
+
+            const li = document.createElement('li');
+            li.innerHTML = `
+            ${item.title} 
+            <span>
+                <button class="minus" data-index="${index}">-</button>
+                ${item.quantity}
+                <button class="plus" data-index="${index}">+</button>
+            </span>
+            <button class="remove" data-index="${index}">x</button>
+        `;
+            cartItemsContainer.appendChild(li);
+        });
+
+        cartCount.innerText = totalItems;
+        document.getElementById('cart-total').innerText = `Total items: ${totalItems}`;
+
+        // Agregar eventos a botones + - x
+        document.querySelectorAll('.plus').forEach(btn => {
+            btn.addEventListener('click', e => {
+                const i = e.target.dataset.index;
+                cartItems[i].quantity++;
+                updateCartUI();
+            });
+        });
+
+        document.querySelectorAll('.minus').forEach(btn => {
+            btn.addEventListener('click', e => {
+                const i = e.target.dataset.index;
+                if (cartItems[i].quantity > 1) {
+                    cartItems[i].quantity--;
+                } else {
+                    cartItems.splice(i, 1);
+                }
+                updateCartUI();
+            });
+        });
+
+        document.querySelectorAll('.remove').forEach(btn => {
+            btn.addEventListener('click', e => {
+                const i = e.target.dataset.index;
+                cartItems.splice(i, 1);
+                updateCartUI();
+            });
+        });
+    }
+
+    // Evento de los botones "Pedir"
     orderButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
+            const card = e.target.closest('.card');
+            const title = card.querySelector('.card-title').innerText;
+
+            // Feedback visual
             const currentBtn = e.target;
             const originalText = currentBtn.innerText;
-
-            // Evitamos que den clic muchas veces seguidas
             if (currentBtn.classList.contains('is-added')) return;
-
-            // Cambiamos el estado visual
             currentBtn.classList.add('is-added');
             currentBtn.innerText = "¡Agregado! ✔";
-
-            // Simulamos que pasaron 2 segundos y volvemos a la normalidad
             setTimeout(() => {
                 currentBtn.classList.remove('is-added');
                 currentBtn.innerText = originalText;
-            }, 2000);
+            }, 1000);
+
+            // Agregar al carrito
+            const existingItem = cartItems.find(item => item.title === title);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cartItems.push({ title, quantity: 1 });
+            }
+
+            updateCartUI();
+            openCart();
         });
     });
+
+    // Cerrar carrito
+    btnCloseCart.addEventListener('click', closeCart);
+
+    // Comprar
+    btnBuy.addEventListener('click', () => {
+        if (cartItems.length === 0) {
+            alert("Tu carrito está vacío");
+            return;
+        }
+        const deliveryType = document.getElementById('delivery-type').value;
+        alert(`Compra exitosa! Tipo de entrega: ${deliveryType}`);
+        cartItems = [];
+        updateCartUI();
+        closeCart();
+    });
+
     // ---------------------------------------------
     // 3. MENSAJES ROTATIVOS EN TOPBAR
     // ---------------------------------------------
@@ -157,6 +258,9 @@ document.addEventListener('DOMContentLoaded', () => {
         footerForm.reset();
         alert('Gracias por escribirnos ☕ Te responderemos pronto.');
     });
+
+
+
 
 });
 

@@ -47,10 +47,12 @@
                     <li><a href="#productos" class="nav-link">Nuestra Carta</a></li>
                     <li><a href="#footer" class="nav-link">Reservas</a></li>
                     <li><a href="assets/PDFs/Carta-AromaGrano.pdf" class="nav-link" download>Descargar Carta</a></li>
-                    <li class="nav-link-action">
+                    <li class="nav-link-action" id="nav-cart">
+                        <!-- Botón cerrar -->
                         <span class="material-symbols-outlined">
                             shopping_cart
                         </span>
+                        <span id="cart-count" class="cart-count">0</span>
                     </li>
                 </ul>
             </nav>
@@ -73,8 +75,8 @@
 
             <!-- Contenedor de botones -->
             <div class="hero-buttons">
-                <a href="#" class="btn btn-primary">Nuestra carta</a>
-                <a href="#" class="btn btn-secondary-dark">Reservar Mesa</a>
+                <a href="#productos" class="btn btn-primary">Nuestra carta</a>
+                <a href="#footer" class="btn btn-secondary-dark">Reservar Mesa</a>
             </div>
         </div>
     </section>
@@ -101,7 +103,8 @@
                         </span></div>
                     <h3 class="card-title">Delivery</h3>
                     <p class="card-desc">Lleva la experiencia premium a tu hogar u oficina.</p>
-                    <button class="btn btn-secondary-dark">Nuestra Carta</button>
+                    <button class="btn btn-secondary-dark" onclick="window.location.href='#productos'">Nuestra
+                        Carta</button>
                 </article>
 
                 <!-- Tarjeta 3 -->
@@ -111,7 +114,8 @@
                         </span></div>
                     <h3 class="card-title">Reservas privadas</h3>
                     <p class="card-desc">Celebra ocasiones especiales o reserva tu mesa en nuestras sucursales</p>
-                    <button class="btn btn-secondary-dark">Reservar Mesa</button>
+                    <button class="btn btn-secondary-dark" onclick="window.location.href='#footer'">Reservar
+                        Mesa</button>
                 </article>
             </div>
         </div>
@@ -512,8 +516,20 @@
             <!-- Contenido -->
             <div class="footer-grid">
 
-                <!-- Servicios -->
+
+
+
+                <!-- Servicios y horarios -->
                 <div class="footer-col">
+                    <h4 class="footer-subtitle">Horarios de Atención</h4>
+                    <ul class="footer-list">
+                        <li>Lunes a Viernes: 08:00 – 20:00 </li>
+                        <li>Sábados: 09:00 – 22:00 </li>
+                        <li>Domingos y festivos: 09:00 – 18:00 </li>
+                    </ul>
+
+                    <br>
+
                     <h4 class="footer-subtitle">Servicios</h4>
                     <ul class="footer-list">
                         <li>Atención en barra</li>
@@ -591,7 +607,34 @@
         </div>
     </footer>
 
+    <!-- Carrito lateral -->
+    <div class="cart" id="cart">
+
+        <h3>Tu carrito</h3>
+        <ul class="cart-items" id="cart-items">
+            <!-- Productos agregados aparecerán aquí -->
+        </ul>
+
+        <!-- Selector de retiro o despacho -->
+        <label for="delivery-type">Tipo de entrega:</label>
+        <select id="delivery-type">
+            <option value="retirar">Retirar en local</option>
+            <option value="despacho">Despacho a domicilio</option>
+        </select>
+
+        <p class="cart-total" id="cart-total">Total items: 0</p>
+
+        <!-- Barra inferior con botones -->
+        <div class="cart-actions">
+            <button id="btn-close-cart" class="btn btn-secondary-light">Cerrar</button>
+            <button id="btn-buy" class="btn btn-primary">Comprar</button>
+        </div>
+
+    </div>
+
     <script src="script.js"></script>
+
+
 
 </body>
 
