@@ -561,7 +561,7 @@ img {
 .testimonial-text {
     font-size: 1.1rem;
     font-style: italic;
-    color: var(--white-soft);
+    color: var(--white-main);
     margin-bottom: 1rem;
 }
 
@@ -575,7 +575,7 @@ img {
 .slider-btn {
     background: none;
     border: none;
-    color: #bf958e;
+    color: var(--white-soft);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -655,7 +655,8 @@ img {
 
 /* Form */
 .footer-form input,
-.footer-form textarea {
+.footer-form textarea,
+.footer-form select {
     width: 100%;
     background-color: transparent;
     border: 1px solid #ffffff3d;
@@ -666,7 +667,13 @@ img {
     font-family: inherit;
 }
 
+/* Inputs de fecha y hora en móviles pueden verse más pequeños, ajusta si quieres */
+.footer-form input[type="date"],
+.footer-form input[type="time"] {
+    color: #fff;
+}
 
+/* Mapa */
 .footer-map {
     width: 100%;
     margin-top: 3rem;

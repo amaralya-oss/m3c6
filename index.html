@@ -545,6 +545,19 @@
                     <form class="footer-form">
                         <input type="text" placeholder="Nombre" required>
                         <input type="email" placeholder="Email" required>
+                        <!-- Selección de sucursal -->
+                        <select name="sucursal" required>
+                            <option value="" disabled selected>Selecciona sucursal</option>
+                            <option value="las_condes">Las Condes - Av. Apoquindo 3200</option>
+                            <option value="providencia">Providencia - Av. Italia 850</option>
+                            <option value="vitacura">Vitacura - Av. Alonso de Córdova 1200</option>
+                        </select>
+
+                        <!-- Selección de día -->
+                        <input type="date" name="fecha" required>
+
+                        <!-- Selección de hora -->
+                        <input type="time" name="hora" required>
                         <textarea placeholder="Mensaje" rows="3"></textarea>
                         <button type="submit" class="btn btn-secondary-dark">
                             Enviar
@@ -555,7 +568,7 @@
             </div>
         </div>
 
-        
+
         <!-- Mapa -->
         <div class="footer-map">
             <iframe src="https://www.google.com/maps?q=Av.%20Apoquindo%203200%20Las%20Condes&output=embed"
