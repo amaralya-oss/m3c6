@@ -104,7 +104,7 @@ img {
 
 /*--- Módulo: Topbar --- */
 .topbar {
-    background-color: #3e2723;
+    background-color: #66644b;
     /* café oscuro */
     color: #f5f5f5;
     font-size: 0.8rem;
@@ -150,7 +150,7 @@ img {
 }
 
 .nav-link:hover {
-    color: #d32f2f;
+    color: #b45427;
 }
 
 .nav-toggle {
@@ -231,7 +231,7 @@ img {
 }
 
 .nav-link-action .material-symbols-outlined:hover {
-    color: #d32f2f;
+    color: #b45427;
     /* cambio de color al pasar el mouse */
     cursor: pointer;
 }
@@ -344,7 +344,7 @@ img {
 
 /* --- Módulo: Servicios --- */
 .servicios {
-    background-color: #3e2723;
+    background-color: #291c18;
     /* bloque oscuro */
     color: #fff;
     padding: 2rem 0;
@@ -355,6 +355,7 @@ img {
     margin-bottom: 3rem;
 }
 
+
 .servicios .l-grid-3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -362,14 +363,13 @@ img {
 }
 
 .servicios .servicio-card {
-    background-color: #33201d !important;
-    /* más claro que el bloque */
-    border:none !important;
+    background-color: #35241f !important;
+    border: none !important;
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
-    transition: transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
+    box-shadow: 0.3s ease;
 }
 
 .servicio-card:hover {
@@ -380,6 +380,7 @@ img {
 .servicio-card .card-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: #807e5d;
 }
 
 .servicio-card .card-title {
@@ -393,6 +394,65 @@ img {
     font-weight: 300;
     color: hsl(15, 40%, 82%);
 }
+
+/* --- Módulo: Productos --- */
+.productos {
+    background-color: #fefefa;
+}
+
+.productos .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/*--- Módulo: Tabs --- */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tab {
+    background: none;
+    border: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #795548;
+    cursor: pointer;
+    padding-bottom: 0.3rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tab:hover {
+    color: #3e2723;
+}
+
+.tab.is-active {
+    color: #3e2723;
+}
+
+.tab.is-active::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3e2723;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.is-active {
+    display: block;
+}
+
+
 
 /* --- Módulo: Card --- */
 .card {
@@ -419,6 +479,12 @@ img {
     color: #fff;
 }
 
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .card-content {
     padding: 2rem;
 }
@@ -432,6 +498,7 @@ img {
     color: #795548;
     font-size: 0.95rem;
 }
+
 
 /* Elemento interno del módulo */
 .card-badge {
@@ -454,8 +521,8 @@ img {
 
 /* Estado activo para link de navegación */
 .nav-link.is-active {
-    color: #d32f2f;
-    border-bottom: 2px solid #d32f2f;
+    color: #b45427;
+    border-bottom: 2px solid #b45427;
 }
 
 /* Estado destacado para una card */

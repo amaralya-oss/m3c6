@@ -20,6 +20,7 @@
 
 <body>
 
+
     <!-- Barra superior informativa (Topbar)-->
     <div class="topbar">
         <div class="l-container">
@@ -28,6 +29,8 @@
             </p>
         </div>
     </div>
+
+
     <!-- Barra de navegación (Navbar)-->
     <header class="l-header">
         <div class="l-container header-top">
@@ -76,22 +79,26 @@
         </div>
     </section>
 
+
     <!-- Sección de servicios-->
     <section class="l-section servicios">
         <div class="l-container">
-            <h2 class="section-title">Servicios</h2>
 
             <div class="l-grid-3">
                 <!-- Tarjeta 1 -->
                 <article class="card servicio-card">
-                    <div class="card-icon">☕</div>
+                    <div class="card-icon"><span class="material-symbols-outlined">
+                            coffee
+                        </span></div>
                     <h3 class="card-title">Atención en barra</h3>
                     <p class="card-desc"> Disfruta de nuestros cafés de altura en un ambiente exclusivo.</p>
                 </article>
 
                 <!-- Tarjeta 2 -->
                 <article class="card servicio-card">
-                    <div class="card-icon">🛵</div>
+                    <div class="card-icon"><span class="material-symbols-outlined">
+                            moped
+                        </span></div>
                     <h3 class="card-title">Delivery</h3>
                     <p class="card-desc">Lleva la experiencia premium a tu hogar u oficina.</p>
                     <button class="btn btn-secondary-dark">Nuestra Carta</button>
@@ -99,8 +106,10 @@
 
                 <!-- Tarjeta 3 -->
                 <article class="card servicio-card">
-                    <div class="card-icon">🎉</div>
-                    <h3 class="card-title">Reservas privadas / Eventos</h3>
+                    <div class="card-icon"><span class="material-symbols-outlined">
+                            concierge
+                        </span></div>
+                    <h3 class="card-title">Reservas privadas</h3>
                     <p class="card-desc">Celebra ocasiones especiales o reserva tu mesa en nuestras sucursales</p>
                     <button class="btn btn-secondary-dark">Reservar Mesa</button>
                 </article>
@@ -108,15 +117,276 @@
         </div>
     </section>
 
-    <!-- Sección de productos -->
+
+    <!-- Sección Productos -->
     <section class="l-section productos">
         <div class="l-container">
-            <h2 class="section-title">Productos</h2>
-            <div class="card">Café de especialidad</div>
-            <div class="card">Bebidas frías</div>
-            <div class="card">Desayunos y Brunch</div>
-            <div class="card">Infusiones</div>
-        </div>
+
+            <!-- Título sección -->
+            <h2 class="section-title">Nuestra carta</h2>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab is-active" data-tab="cafe">Café de especialidad</button>
+                <button class="tab" data-tab="frias">Bebidas frías</button>
+                <button class="tab" data-tab="brunch">Desayunos & Brunch</button>
+                <button class="tab" data-tab="infusiones">Infusiones</button>
+            </div>
+
+            <!-- Contenido Tabs -->
+            <div class="tabs-content">
+
+                <!-- Café -->
+                <div class="tab-panel is-active" id="cafe">
+
+                    <div class="l-grid-3">
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Espresso Romano</h3>
+                                <p class="card-desc">Intenso con un toque de limón siciliano.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Flat White</h3>
+                                <p class="card-desc">Doble shot con leche texturizada fina.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Cappuccino Clásico</h3>
+                                <p class="card-desc">Balance perfecto entre café, leche y espuma.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Latte Vainilla Natural</h3>
+                                <p class="card-desc">Suave, aromático y ligeramente dulce.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Americano Filtrado</h3>
+                                <p class="card-desc">Largo, limpio y de perfil balanceado.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Café de Origen del Día</h3>
+                                <p class="card-desc">Grano seleccionado, método filtrado.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- Bebidas frías -->
+                <div class="tab-panel" id="frias">
+                    <div class="l-grid-3">
+
+                        <article class="card is-highlighted">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Iced Matcha Latte</h3>
+                                <div class="card-badge">Nuevo</div>
+                                <p class="card-desc">Té matcha de grado ceremonial batido con leche fría y servido sobre
+                                    hielo.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Cold Brew</h3>
+                                <p class="card-desc">Macerado en frío por 24 horas.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Iced Latte</h3>
+                                <p class="card-desc">Espresso frío con leche y hielo cristalino.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Cold Brew Tónica</h3>
+                                <p class="card-desc">Refrescante, cítrico y ligeramente amargo.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Affogato</h3>
+                                <p class="card-desc">Espresso caliente sobre helado de vainilla.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Iced Mocha</h3>
+                                <p class="card-desc">Café frío con cacao intenso y leche.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- Brunch -->
+                <div class="tab-panel" id="brunch">
+                    <div class="l-grid-3">
+
+                        <article class="card is-highlighted">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">French Toast</h3>
+                                <div class="card-badge">Nuevo</div>
+                                <p class="card-desc">Brioche dorado con frutas y azúcar flor.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Avocado Toast</h3>
+                                <p class="card-desc">Pan artesanal, palta fresca y semillas.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Croissant de Mantequilla</h3>
+                                <p class="card-desc">Dorado, crujiente y recién horneado.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Bowl de Yogurt & Granola</h3>
+                                <p class="card-desc">Yogurt natural, frutas de estación y miel.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Huevos Revueltos Gourmet</h3>
+                                <p class="card-desc">Huevos cremosos con pan tostado.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Sándwich Caprese</h3>
+                                <p class="card-desc">Mozzarella, tomate y pesto fresco.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- Infusiones -->
+                <div class="tab-panel" id="infusiones">
+                    <div class="l-grid-3">
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Té Earl Grey</h3>
+                                <p class="card-desc">Negro con notas cítricas de bergamota.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Té Verde Jazmín</h3>
+                                <p class="card-desc">Floral, suave y aromático.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">
+                                <img src="https://images.unsplash.com/photo-1749105862005-6e0409c8c55a?q=80&w=628&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Manzanilla">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Rooibos Vainilla</h3>
+                                <p class="card-desc">Naturalmente dulce y sin cafeína.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+
+
+                        <article class="card">
+                            <div class="card-image" style="background-color: #d7ccc8;">☕</div>
+                            <div class="card-content">
+                                <h3 class="card-title">Manzanilla Orgánica</h3>
+                                <p class="card-desc">Relajante y delicada.</p>
+                                <button class="btn btn-small">Pedir</button>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
     </section>
 
 
