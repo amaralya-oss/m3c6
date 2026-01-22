@@ -236,6 +236,8 @@ img {
     cursor: pointer;
 }
 
+
+
 /* --- Módulo: Button --- */
 .btn {
     display: inline-block;
@@ -244,9 +246,10 @@ img {
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
-    font-weight: bold;
+    font-weight: 400;
     text-transform: uppercase;
     font-size: 0.9rem;
+    margin: 5px;
 }
 
 /* Subclase de modulo (Variante) */
@@ -257,6 +260,25 @@ img {
 
 .btn-primary:hover {
     background-color: #5d4037;
+}
+
+.btn-secondary-dark {
+    border: 1px solid #ffffff72;
+    /* borde visible sobre fondo oscuro */
+    background-color: transparent;
+    /* fondo transparente */
+    color: #fff;
+    /* texto blanco */
+    margin-top: 1rem;
+}
+
+.btn-secondary-dark:hover {
+    background-color: #fff;
+    /* fondo blanco */
+    color: #3e2723;
+    /* texto café oscuro */
+    border-color: #fff;
+    /* borde se mantiene */
 }
 
 .btn-small {
@@ -271,6 +293,7 @@ img {
     background-color: #3e2723;
     color: #fff;
 }
+
 
 /* --- Módulo: Hero --- */
 .hero {
@@ -317,6 +340,58 @@ img {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     font-weight: 300;
+}
+
+/* --- Módulo: Servicios --- */
+.servicios {
+    background-color: #3e2723;
+    /* bloque oscuro */
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.servicios .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.servicios .l-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.servicios .servicio-card {
+    background-color: #33201d !important;
+    /* más claro que el bloque */
+    border:none !important;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.servicio-card .card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.servicio-card .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: hsl(14, 59%, 94%);
+}
+
+.servicio-card .card-desc {
+    font-size: 1rem;
+    font-weight: 300;
+    color: hsl(15, 40%, 82%);
 }
 
 /* --- Módulo: Card --- */
