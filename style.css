@@ -499,6 +499,84 @@ img {
     font-size: 0.95rem;
 }
 
+/* --- Módulo: Testimonios --- */
+.testimonios {
+    background-color: #35241f;
+}
+
+.testimonios .section-title {
+    text-align: center;
+    color: #f3d3cd;
+}
+
+.testimonial-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonial-track {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
+
+.testimonial {
+    min-width: 100%;
+    padding: 3rem 2.5rem;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #eae3e1;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    font-weight: 500;
+    color: #ad968e;
+}
+
+/* Botones testimonios*/
+
+.slider-btn {
+    background: none;
+    border: none;
+    color: #bf958e;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px;
+    align-content: center;
+}
+
+.slider-btn:hover {
+    background-color: #3e2723;
+    color: #fff;
+}
+
+.slider-btn.prev {
+    margin-right: 1rem;
+}
+
+.slider-btn.next {
+    margin-left: 1rem;
+}
+
 
 /* Elemento interno del módulo */
 .card-badge {
@@ -513,6 +591,10 @@ img {
     text-transform: uppercase;
     font-weight: bold;
 }
+
+
+
+
 
 /* =========================================
    4. STATE (Prefijo is-)

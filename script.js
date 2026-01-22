@@ -97,6 +97,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    
+    // ---------------------------------------------
+    // 6. TESTIMONIAL SLIDER
+    // ---------------------------------------------
+    const track = document.querySelector('.testimonial-track');
+    const testimonials = document.querySelectorAll('.testimonial');
+    const prevBtn = document.querySelector('.slider-btn.prev');
+    const nextBtn = document.querySelector('.slider-btn.next');
+
+    let index = 0;
+    let autoSlide;
+
+    function updateSlider() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function startAutoSlide() {
+        autoSlide = setInterval(() => {
+            index = (index + 1) % testimonials.length;
+            updateSlider();
+        }, 3000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlide);
+    }
+
+    // Botones
+    nextBtn.addEventListener('click', () => {
+        stopAutoSlide();
+        index = (index + 1) % testimonials.length;
+        updateSlider();
+        startAutoSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        stopAutoSlide();
+        index = (index - 1 + testimonials.length) % testimonials.length;
+        updateSlider();
+        startAutoSlide();
+    });
+
+    // Pausar al hover
+    track.addEventListener('mouseenter', stopAutoSlide);
+    track.addEventListener('mouseleave', startAutoSlide);
+
+    // Iniciar
+    startAutoSlide();
+
+
+
 });
 
