@@ -111,50 +111,106 @@ img {
    Botones, Tarjetas, Navs, Heros.
    ========================================= */
 
-/* --- Carrito de compras --- */
+/* --- Módulo: Carro de compras --- */
 .cart {
     position: fixed;
-    top: 70px;
-    right: -350px;
-    width: 300px;
-    max-height: 80vh;
-    background-color: #fff;
-    box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    transition: right 0.3s ease;
-    overflow-y: auto;
-    z-index: 200;
-    border-radius: 8px 0 0 8px;
+    top: 0;
+    right: -420px;
+    width: 380px;
+    height: 100vh;
+    background-color: #fefefa;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: right 0.35s ease;
+    z-index: 999;
 }
 
-.cart.open {
+.cart.is-open {
     right: 0;
 }
 
+/* Título */
 .cart h3 {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #e6e0dc;
+    padding-bottom: 0.5rem;
 }
 
-.cart-items li {
+/* Lista de productos */
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Item individual */
+.cart-item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
-    padding: 0.3rem 0;
-    border-bottom: 1px solid #eee;
+    align-items: center;
+    background-color: #f9f5f2;
+    padding: 0.75rem;
+    border-radius: 8px;
 }
 
-.cart-items li button {
-    background: none;
-    border: none;
-    color: #b45427;
-    cursor: pointer;
+.cart-item-info {
     font-size: 0.9rem;
 }
 
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cart-item-controls button {
+    border: none;
+    background-color: #e6e0dc;
+    color: #3e2723;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Select */
+.cart label {
+    font-size: 0.85rem;
+    color: #6d4c41;
+}
+
+.cart select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #d7ccc8;
+    background-color: #fff;
+}
+
+/* Total */
 .cart-total {
-    font-weight: bold;
-    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: right;
+    border-top: 1px solid #e6e0dc;
+    padding-top: 0.5rem;
+}
+
+/* Acciones */
+.cart-actions {
+    display: flex;
+    gap: 0.75rem;
+    position: sticky;
+    bottom: 0;
+    background-color: #fefefa;
+    padding-top: 1rem;
 }
 
 /* --- Contador carrito --- */
@@ -173,6 +229,9 @@ img {
 .nav-link-action {
     position: relative;
 }
+
+
+
 
 /*--- Módulo: Topbar --- */
 .topbar {
@@ -411,24 +470,23 @@ img {
 /* Botón secundario para fondos claros */
 .btn-secondary-light {
     border: 1px solid #3e2723;
-    /* borde café oscuro */
     background-color: transparent;
-    /* fondo transparente */
     color: #3e2723;
-    /* texto café oscuro */
     margin-top: 1rem;
     transition: all 0.3s ease;
-    /* transición suave */
+    flex: 1;
+    border: 1px solid #c7b8a8;
+    background-color: transparent;
+    color: #6d4c41;
 }
 
 .btn-secondary-light:hover {
-    background-color: #3e2723;
-    /* fondo café oscuro al pasar mouse */
+    background-color: #ede7e3;
     color: #fff;
-    /* texto blanco sobre fondo oscuro */
     border-color: #3e2723;
-    /* borde igual que fondo */
 }
+
+
 
 /* --- Módulo: Hero --- */
 .hero {
@@ -647,6 +705,17 @@ img {
     text-transform: uppercase;
     font-weight: bold;
 }
+
+.card-price {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #b45427;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
 
 
 /* --- Módulo: Testimonios --- */
